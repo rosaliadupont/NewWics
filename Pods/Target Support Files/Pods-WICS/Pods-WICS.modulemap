@@ -1,0 +1,6 @@
+framework module Pods_WICS {
+  umbrella header "Pods-WICS-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -20,6 +20,8 @@ let timestampFormatter: DateFormatter = {
 
 
 class MainViewController: UIViewController, EditPostVCDelegate {
+    
+    var userLocation: CLLocation!
 
     // MARK: - Properties
     let refreshControl = UIRefreshControl()
@@ -31,7 +33,7 @@ class MainViewController: UIViewController, EditPostVCDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        reloadTimeLine()
+        
         UIApplication.shared.statusBarStyle = .lightContent
         
         navigationController!.navigationBar.barTintColor = .black
@@ -46,24 +48,14 @@ class MainViewController: UIViewController, EditPostVCDelegate {
             }
             guard let _ = location else {
                 return
-            }
-            /*print(placemark?.administrativeArea ?? "")
-             print(placemark?.name ?? "")
-             print(placemark?.country ?? "")
-             print(placemark?.areasOfInterest ?? "")
-             print(placemark?.isoCountryCode ?? "")
-             print(placemark?.location ?? "")
-             print(placemark?.locality ?? "")
-             print(placemark?.subLocality ?? "")
-             print(placemark?.postalCode ?? "")
-             print(placemark?.timeZone ?? "")*/
+            } 
             print(placemark?.addressDictionary?.description ?? "")
             
             let address = placemark?.addressDictionary?["FormattedAddressLines"] as! NSArray
             print(address.description)
             
             print("this is latitude: \((placemark?.location?.coordinate.latitude)!)")
-            print( "this is longitude: zs\((placemark?.location?.coordinate.longitude)!)")
+            print( "this is longitude: \((placemark?.location?.coordinate.longitude)!)")
             
             if let temporaryNavigationController = self.navigationController
             {
@@ -71,6 +63,8 @@ class MainViewController: UIViewController, EditPostVCDelegate {
             }
             
             self.navigationItem.title = placemark?.locality
+            self.userLocation = CLLocation(latitude: (placemark?.location?.coordinate.latitude)!, longitude: (placemark?.location?.coordinate.longitude)!)
+            self.reloadTimeLine()
         }
         
         
@@ -93,11 +87,10 @@ class MainViewController: UIViewController, EditPostVCDelegate {
     
     func reloadTimeLine() {
         
-        UserService.timeline { (posts) in
+        UserService.timeline(userLocation: userLocation) { (posts) in
             self.posts = posts
             
             if self.refreshControl.isRefreshing {
-                
                 self.refreshControl.endRefreshing()
             }
             
@@ -134,6 +127,7 @@ class MainViewController: UIViewController, EditPostVCDelegate {
     }
     
     @IBOutlet weak var myLocationLabel: UILabel!
+    
     @IBAction func locationButtonTapped(_ sender: Any) {
         LocationManager.sharedInstance.getCurrentReverseGeoCodedLocation { (location:CLLocation?, placemark:CLPlacemark?, error:NSError?) in
             if error != nil {
@@ -153,15 +147,15 @@ class MainViewController: UIViewController, EditPostVCDelegate {
              print(placemark?.locality ?? "")
              print(placemark?.subLocality ?? "")
              print(placemark?.postalCode ?? "")
-             print(placemark?.timeZone ?? "")*/
-            print(placemark?.addressDictionary?.description ?? "")
+             print(placemark?.timeZone ?? "")
+             print(placemark?.addressDictionary?.description ?? "") */
             
             print("this is latitude: \((placemark?.location?.coordinate.latitude)!)")
             print( "this is longitude: \((placemark?.location?.coordinate.longitude)!)")
             
             self.navigationItem.title = placemark?.locality
-            
-            print("here is the locality \(String(describing: placemark!.locality))")
+            self.userLocation = CLLocation(latitude: (placemark?.location?.coordinate.latitude)!, longitude: (placemark?.location?.coordinate.longitude)!)
+            print("HERE IS THE USER'S LOCATION \(self.userLocation)")
         }
     }
 }
@@ -179,7 +173,7 @@ extension MainViewController: UITableViewDataSource {
             
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostHeaderCell") as! PostHeaderCell
-            cell.usernameLabel.text = User.current.username
+            cell.usernameLabel.text = post.poster.username
             cell.selectionStyle = .none
             return cell
             
@@ -187,7 +181,7 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostDisplayCell") as! PostDisplayCell
             cell.postTitle.text = post.title
             cell.postDate.text = post.eventDate
-            cell.postLocation.text = post.location["city"]!
+            cell.postLocation.text = post.location["city"]! as? String
             cell.postDescription.text = post.description
             cell.selectionStyle = .none
 

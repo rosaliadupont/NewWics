@@ -54,7 +54,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>LoremIpsum.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-WICS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SlackTextViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -63,6 +73,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>13E34E109CD2E7D808D2EE18BFE0060B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,17 +102,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5BC5EB391F41BD1DBDD49F719E7A98FC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>681BE6E3D02A43F9BA63777AC435C8FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>7335E9C9689F3B8A16F063A884748533</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>91710B7DF90241FB3857CCDA4E28AFE6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A4444E2B7B901124FE8440A40C3F8FB7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

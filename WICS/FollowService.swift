@@ -77,7 +77,7 @@ struct FollowService {
                 }
                 
                 // 4 We write the dictionary to our database.
-                ref.updateChildValues(followData, withCompletionBlock: { (error, ref) in
+                ref.updateChildValues(unfollowData, withCompletionBlock: { (error, ref) in
                     if let error = error {
                         assertionFailure(error.localizedDescription)
                     }

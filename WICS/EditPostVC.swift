@@ -17,13 +17,17 @@ import MapKit
 
 class EditPostVC: UIViewController, SearchViewControllerDelegate {
     
+    let datePicker = UIDatePicker()
+    
     var city: String
-    var longitude: String
-    var latitude: String
-
+    var longitude: Double
+    var latitude: Double
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        createDatePicker()
 
         // Do any additional setup after loading the view.
     }
@@ -40,8 +44,8 @@ class EditPostVC: UIViewController, SearchViewControllerDelegate {
     required init?(coder aDecoder: NSCoder) {
         
         self.city = ""
-        self.longitude = ""
-        self.latitude = ""
+        self.longitude = 0
+        self.latitude = 0
         
         super.init(coder: aDecoder)
         
@@ -51,13 +55,32 @@ class EditPostVC: UIViewController, SearchViewControllerDelegate {
         
     }
     
-    
-    
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var locationField: UIButton!
     @IBOutlet weak var descriptionField: UITextField!
     
+    
+    func createDatePicker(){
+        datePicker.datePickerMode = .dateAndTime
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([doneButton], animated: false)
+        dateField.inputAccessoryView = toolbar
+        dateField.inputView = datePicker
+        
+    }
+    
+    func donePressed() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        dateField.text = dateFormatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+
     
     var isEditingPost: Bool = false
     
@@ -65,8 +88,8 @@ class EditPostVC: UIViewController, SearchViewControllerDelegate {
         locationField.setTitleColor(.black, for: .normal)
         locationField.setTitle(placemark.title, for: .normal)
         city = placemark.locality!
-        latitude = placemark.coordinate.latitude.description
-        longitude = placemark.coordinate.longitude.description
+        latitude = placemark.coordinate.latitude
+        longitude = placemark.coordinate.longitude
         print("\(#function) \(latitude)")
         print("\(#function) \(longitude)")
         

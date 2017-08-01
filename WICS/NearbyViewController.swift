@@ -52,7 +52,7 @@ class NearbyViewController: UIViewController {
             print(address.description)
             
             print("this is latitude: \((placemark?.location?.coordinate.latitude)!)")
-            print( "this is longitude: zs\((placemark?.location?.coordinate.longitude)!)")
+            print( "this is longitude: \((placemark?.location?.coordinate.longitude)!)")
         }
         
         //HERE YOU WILL GET CURRENT LOCATION OF THE USER

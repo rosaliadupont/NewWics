@@ -33,6 +33,28 @@
 		384AA5671F2BAB680092E1CD /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AA5661F2BAB680092E1CD /* NetworkViewController.swift */; };
 		384AA5691F2BAB730092E1CD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AA5681F2BAB730092E1CD /* SearchViewController.swift */; };
 		384AA56C1F2BAB960092E1CD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AA56B1F2BAB960092E1CD /* LocationManager.swift */; };
+		384AA5C51F3048ED0092E1CD /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AA5C41F3048ED0092E1CD /* MessageViewController.swift */; };
+		384AA63C1F3069BE0092E1CD /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 384AA63B1F3069BE0092E1CD /* Message.m */; };
+		384AA63E1F3069E00092E1CD /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 384AA63D1F3069E00092E1CD /* MessageTableViewCell.m */; };
+		384AA6421F306A940092E1CD /* MessageTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 384AA6411F306A940092E1CD /* MessageTextView.m */; };
+		384AA6451F306AF50092E1CD /* TypingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 384AA6441F306AF50092E1CD /* TypingIndicatorView.m */; };
+		384AA6641F306BB70092E1CD /* SLKInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 384AA6471F306BB70092E1CD /* SLKInputAccessoryView.m */; };
+		384AA6651F306BB70092E1CD /* SLKTextInput+Implementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 384AA6491F306BB70092E1CD /* SLKTextInput+Implementation.m */; };
+		384AA6661F306BB70092E1CD /* SLKTextInputbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 384AA64B1F306BB70092E1CD /* SLKTextInputbar.m */; };
+		384AA6671F306BB70092E1CD /* SLKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 384AA64D1F306BB70092E1CD /* SLKTextView.m */; };
+		384AA6681F306BB70092E1CD /* SLKTextView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 384AA64F1F306BB70092E1CD /* SLKTextView+SLKAdditions.m */; };
+		384AA6691F306BB70092E1CD /* SLKTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 384AA6511F306BB70092E1CD /* SLKTextViewController.m */; };
+		384AA66A1F306BB70092E1CD /* SLKTypingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 384AA6541F306BB70092E1CD /* SLKTypingIndicatorView.m */; };
+		384AA66B1F306BB70092E1CD /* UIResponder+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 384AA6571F306BB70092E1CD /* UIResponder+SLKAdditions.m */; };
+		384AA66C1F306BB70092E1CD /* UIScrollView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 384AA6591F306BB70092E1CD /* UIScrollView+SLKAdditions.m */; };
+		384AA66D1F306BB70092E1CD /* UIView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 384AA65B1F306BB70092E1CD /* UIView+SLKAdditions.m */; };
+		384AA66E1F306BB70092E1CD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 384AA65C1F306BB70092E1CD /* Info.plist */; };
+		384AA66F1F306BB70092E1CD /* SlackTextViewController.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 384AA65E1F306BB70092E1CD /* SlackTextViewController.xcconfig */; };
+		384AA6701F306BB70092E1CD /* SlackTextViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 384AA65F1F306BB70092E1CD /* SlackTextViewController-dummy.m */; };
+		384AA67B1F306BBF0092E1CD /* LoremIpsum.m in Sources */ = {isa = PBXBuildFile; fileRef = 384AA6721F306BBF0092E1CD /* LoremIpsum.m */; };
+		384AA67C1F306BBF0092E1CD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 384AA6731F306BBF0092E1CD /* Info.plist */; };
+		384AA67D1F306BBF0092E1CD /* LoremIpsum.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 384AA6751F306BBF0092E1CD /* LoremIpsum.xcconfig */; };
+		384AA67E1F306BBF0092E1CD /* LoremIpsum-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 384AA6761F306BBF0092E1CD /* LoremIpsum-dummy.m */; };
 		388C9D591F13EAF8002C1164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C9D581F13EAF8002C1164 /* AppDelegate.swift */; };
 		388C9D5B1F13EAF8002C1164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C9D5A1F13EAF8002C1164 /* ViewController.swift */; };
 		388C9D5E1F13EAF8002C1164 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 388C9D5C1F13EAF8002C1164 /* Main.storyboard */; };
@@ -73,6 +95,52 @@
 		384AA5661F2BAB680092E1CD /* NetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkViewController.swift; path = WICS/NetworkViewController.swift; sourceTree = "<group>"; };
 		384AA5681F2BAB730092E1CD /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = WICS/SearchViewController.swift; sourceTree = "<group>"; };
 		384AA56B1F2BAB960092E1CD /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		384AA5C41F3048ED0092E1CD /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		384AA5C61F30564B0092E1CD /* WICS-Bridging-MyHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WICS-Bridging-MyHeader.h"; sourceTree = "<group>"; };
+		384AA63A1F30698C0092E1CD /* Message.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		384AA63B1F3069BE0092E1CD /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		384AA63D1F3069E00092E1CD /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
+		384AA63F1F306A060092E1CD /* MessageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
+		384AA6401F306A730092E1CD /* MessageTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageTextView.h; sourceTree = "<group>"; };
+		384AA6411F306A940092E1CD /* MessageTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTextView.m; sourceTree = "<group>"; };
+		384AA6431F306ACD0092E1CD /* TypingIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypingIndicatorView.h; sourceTree = "<group>"; };
+		384AA6441F306AF50092E1CD /* TypingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypingIndicatorView.m; sourceTree = "<group>"; };
+		384AA6461F306BB70092E1CD /* SLKInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLKInputAccessoryView.h; path = Source/SLKInputAccessoryView.h; sourceTree = "<group>"; };
+		384AA6471F306BB70092E1CD /* SLKInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLKInputAccessoryView.m; path = Source/SLKInputAccessoryView.m; sourceTree = "<group>"; };
+		384AA6481F306BB70092E1CD /* SLKTextInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLKTextInput.h; path = Source/SLKTextInput.h; sourceTree = "<group>"; };
+		384AA6491F306BB70092E1CD /* SLKTextInput+Implementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SLKTextInput+Implementation.m"; path = "Source/SLKTextInput+Implementation.m"; sourceTree = "<group>"; };
+		384AA64A1F306BB70092E1CD /* SLKTextInputbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLKTextInputbar.h; path = Source/SLKTextInputbar.h; sourceTree = "<group>"; };
+		384AA64B1F306BB70092E1CD /* SLKTextInputbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLKTextInputbar.m; path = Source/SLKTextInputbar.m; sourceTree = "<group>"; };
+		384AA64C1F306BB70092E1CD /* SLKTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLKTextView.h; path = Source/SLKTextView.h; sourceTree = "<group>"; };
+		384AA64D1F306BB70092E1CD /* SLKTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLKTextView.m; path = Source/SLKTextView.m; sourceTree = "<group>"; };
+		384AA64E1F306BB70092E1CD /* SLKTextView+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SLKTextView+SLKAdditions.h"; path = "Source/SLKTextView+SLKAdditions.h"; sourceTree = "<group>"; };
+		384AA64F1F306BB70092E1CD /* SLKTextView+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SLKTextView+SLKAdditions.m"; path = "Source/SLKTextView+SLKAdditions.m"; sourceTree = "<group>"; };
+		384AA6501F306BB70092E1CD /* SLKTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLKTextViewController.h; path = Source/SLKTextViewController.h; sourceTree = "<group>"; };
+		384AA6511F306BB70092E1CD /* SLKTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLKTextViewController.m; path = Source/SLKTextViewController.m; sourceTree = "<group>"; };
+		384AA6521F306BB70092E1CD /* SLKTypingIndicatorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLKTypingIndicatorProtocol.h; path = Source/SLKTypingIndicatorProtocol.h; sourceTree = "<group>"; };
+		384AA6531F306BB70092E1CD /* SLKTypingIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLKTypingIndicatorView.h; path = Source/SLKTypingIndicatorView.h; sourceTree = "<group>"; };
+		384AA6541F306BB70092E1CD /* SLKTypingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLKTypingIndicatorView.m; path = Source/SLKTypingIndicatorView.m; sourceTree = "<group>"; };
+		384AA6551F306BB70092E1CD /* SLKUIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLKUIConstants.h; path = Source/SLKUIConstants.h; sourceTree = "<group>"; };
+		384AA6561F306BB70092E1CD /* UIResponder+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIResponder+SLKAdditions.h"; path = "Source/UIResponder+SLKAdditions.h"; sourceTree = "<group>"; };
+		384AA6571F306BB70092E1CD /* UIResponder+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIResponder+SLKAdditions.m"; path = "Source/UIResponder+SLKAdditions.m"; sourceTree = "<group>"; };
+		384AA6581F306BB70092E1CD /* UIScrollView+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+SLKAdditions.h"; path = "Source/UIScrollView+SLKAdditions.h"; sourceTree = "<group>"; };
+		384AA6591F306BB70092E1CD /* UIScrollView+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+SLKAdditions.m"; path = "Source/UIScrollView+SLKAdditions.m"; sourceTree = "<group>"; };
+		384AA65A1F306BB70092E1CD /* UIView+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+SLKAdditions.h"; path = "Source/UIView+SLKAdditions.h"; sourceTree = "<group>"; };
+		384AA65B1F306BB70092E1CD /* UIView+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+SLKAdditions.m"; path = "Source/UIView+SLKAdditions.m"; sourceTree = "<group>"; };
+		384AA65C1F306BB70092E1CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		384AA65D1F306BB70092E1CD /* SlackTextViewController.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = SlackTextViewController.modulemap; sourceTree = "<group>"; };
+		384AA65E1F306BB70092E1CD /* SlackTextViewController.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = SlackTextViewController.xcconfig; sourceTree = "<group>"; };
+		384AA65F1F306BB70092E1CD /* SlackTextViewController-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SlackTextViewController-dummy.m"; sourceTree = "<group>"; };
+		384AA6601F306BB70092E1CD /* SlackTextViewController-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SlackTextViewController-prefix.pch"; sourceTree = "<group>"; };
+		384AA6611F306BB70092E1CD /* SlackTextViewController-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SlackTextViewController-umbrella.h"; sourceTree = "<group>"; };
+		384AA6711F306BBF0092E1CD /* LoremIpsum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoremIpsum.h; path = LoremIpsum/LoremIpsum.h; sourceTree = "<group>"; };
+		384AA6721F306BBF0092E1CD /* LoremIpsum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoremIpsum.m; path = LoremIpsum/LoremIpsum.m; sourceTree = "<group>"; };
+		384AA6731F306BBF0092E1CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		384AA6741F306BBF0092E1CD /* LoremIpsum.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = LoremIpsum.modulemap; sourceTree = "<group>"; };
+		384AA6751F306BBF0092E1CD /* LoremIpsum.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = LoremIpsum.xcconfig; sourceTree = "<group>"; };
+		384AA6761F306BBF0092E1CD /* LoremIpsum-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LoremIpsum-dummy.m"; sourceTree = "<group>"; };
+		384AA6771F306BBF0092E1CD /* LoremIpsum-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LoremIpsum-prefix.pch"; sourceTree = "<group>"; };
+		384AA6781F306BBF0092E1CD /* LoremIpsum-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LoremIpsum-umbrella.h"; sourceTree = "<group>"; };
 		388C9D551F13EAF8002C1164 /* WICS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WICS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		388C9D581F13EAF8002C1164 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		388C9D5A1F13EAF8002C1164 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = WICS/ViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +211,100 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		384AA5B91F2FF3230092E1CD /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				384AA5C41F3048ED0092E1CD /* MessageViewController.swift */,
+			);
+			name = CollectionView;
+			path = WICS;
+			sourceTree = "<group>";
+		};
+		384AA6391F30696F0092E1CD /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				384AA63A1F30698C0092E1CD /* Message.h */,
+				384AA6431F306ACD0092E1CD /* TypingIndicatorView.h */,
+				384AA6441F306AF50092E1CD /* TypingIndicatorView.m */,
+				384AA63B1F3069BE0092E1CD /* Message.m */,
+				384AA63D1F3069E00092E1CD /* MessageTableViewCell.m */,
+				384AA63F1F306A060092E1CD /* MessageTableViewCell.h */,
+				384AA6401F306A730092E1CD /* MessageTextView.h */,
+				384AA6411F306A940092E1CD /* MessageTextView.m */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
+		384AA6621F306BB70092E1CD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				384AA65C1F306BB70092E1CD /* Info.plist */,
+				384AA65D1F306BB70092E1CD /* SlackTextViewController.modulemap */,
+				384AA65E1F306BB70092E1CD /* SlackTextViewController.xcconfig */,
+				384AA65F1F306BB70092E1CD /* SlackTextViewController-dummy.m */,
+				384AA6601F306BB70092E1CD /* SlackTextViewController-prefix.pch */,
+				384AA6611F306BB70092E1CD /* SlackTextViewController-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SlackTextViewController";
+			sourceTree = "<group>";
+		};
+		384AA6631F306BB70092E1CD /* SlackTextViewController */ = {
+			isa = PBXGroup;
+			children = (
+				384AA6461F306BB70092E1CD /* SLKInputAccessoryView.h */,
+				384AA6471F306BB70092E1CD /* SLKInputAccessoryView.m */,
+				384AA6481F306BB70092E1CD /* SLKTextInput.h */,
+				384AA6491F306BB70092E1CD /* SLKTextInput+Implementation.m */,
+				384AA64A1F306BB70092E1CD /* SLKTextInputbar.h */,
+				384AA64B1F306BB70092E1CD /* SLKTextInputbar.m */,
+				384AA64C1F306BB70092E1CD /* SLKTextView.h */,
+				384AA64D1F306BB70092E1CD /* SLKTextView.m */,
+				384AA64E1F306BB70092E1CD /* SLKTextView+SLKAdditions.h */,
+				384AA64F1F306BB70092E1CD /* SLKTextView+SLKAdditions.m */,
+				384AA6501F306BB70092E1CD /* SLKTextViewController.h */,
+				384AA6511F306BB70092E1CD /* SLKTextViewController.m */,
+				384AA6521F306BB70092E1CD /* SLKTypingIndicatorProtocol.h */,
+				384AA6531F306BB70092E1CD /* SLKTypingIndicatorView.h */,
+				384AA6541F306BB70092E1CD /* SLKTypingIndicatorView.m */,
+				384AA6551F306BB70092E1CD /* SLKUIConstants.h */,
+				384AA6561F306BB70092E1CD /* UIResponder+SLKAdditions.h */,
+				384AA6571F306BB70092E1CD /* UIResponder+SLKAdditions.m */,
+				384AA6581F306BB70092E1CD /* UIScrollView+SLKAdditions.h */,
+				384AA6591F306BB70092E1CD /* UIScrollView+SLKAdditions.m */,
+				384AA65A1F306BB70092E1CD /* UIView+SLKAdditions.h */,
+				384AA65B1F306BB70092E1CD /* UIView+SLKAdditions.m */,
+				384AA6621F306BB70092E1CD /* Support Files */,
+			);
+			name = SlackTextViewController;
+			path = ../Pods/SlackTextViewController;
+			sourceTree = "<group>";
+		};
+		384AA6791F306BBF0092E1CD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				384AA6731F306BBF0092E1CD /* Info.plist */,
+				384AA6741F306BBF0092E1CD /* LoremIpsum.modulemap */,
+				384AA6751F306BBF0092E1CD /* LoremIpsum.xcconfig */,
+				384AA6761F306BBF0092E1CD /* LoremIpsum-dummy.m */,
+				384AA6771F306BBF0092E1CD /* LoremIpsum-prefix.pch */,
+				384AA6781F306BBF0092E1CD /* LoremIpsum-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/LoremIpsum";
+			sourceTree = "<group>";
+		};
+		384AA67A1F306BBF0092E1CD /* LoremIpsum */ = {
+			isa = PBXGroup;
+			children = (
+				384AA6711F306BBF0092E1CD /* LoremIpsum.h */,
+				384AA6721F306BBF0092E1CD /* LoremIpsum.m */,
+				384AA6791F306BBF0092E1CD /* Support Files */,
+			);
+			name = LoremIpsum;
+			path = ../Pods/LoremIpsum;
+			sourceTree = "<group>";
+		};
 		388C9D4C1F13EAF8002C1164 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +326,7 @@
 		388C9D571F13EAF8002C1164 /* WICS */ = {
 			isa = PBXGroup;
 			children = (
+				384AA6391F30696F0092E1CD /* Message */,
 				384AA56A1F2BAB870092E1CD /* Helpers */,
 				380F67BB1F19757500DBD5EC /* Views */,
 				380F67B41F17EF1D00DBD5EC /* Extensions */,
@@ -176,6 +339,9 @@
 				388C9D5F1F13EAF8002C1164 /* Assets.xcassets */,
 				388C9D641F13EAF8002C1164 /* Info.plist */,
 				388C9D6A1F1441DA002C1164 /* GoogleService-Info.plist */,
+				384AA5C61F30564B0092E1CD /* WICS-Bridging-MyHeader.h */,
+				384AA67A1F306BBF0092E1CD /* LoremIpsum */,
+				384AA6631F306BB70092E1CD /* SlackTextViewController */,
 			);
 			path = WICS;
 			sourceTree = "<group>";
@@ -202,6 +368,7 @@
 				380F67B71F18218600DBD5EC /* MainViewController.swift */,
 				380F67B91F194BCC00DBD5EC /* EditPostVC.swift */,
 				384AA55D1F28750C0092E1CD /* NearbyViewController.swift */,
+				384AA5B91F2FF3230092E1CD /* CollectionView */,
 			);
 			name = "View Controllers";
 			path = ..;
@@ -311,10 +478,14 @@
 			files = (
 				388C9D631F13EAF8002C1164 /* LaunchScreen.storyboard in Resources */,
 				388C9D6B1F1441DA002C1164 /* GoogleService-Info.plist in Resources */,
+				384AA67C1F306BBF0092E1CD /* Info.plist in Resources */,
+				384AA66F1F306BB70092E1CD /* SlackTextViewController.xcconfig in Resources */,
 				380F67D51F20474900DBD5EC /* notes.strings in Resources */,
 				388C9D601F13EAF8002C1164 /* Assets.xcassets in Resources */,
 				388C9D791F153728002C1164 /* Login.storyboard in Resources */,
+				384AA67D1F306BBF0092E1CD /* LoremIpsum.xcconfig in Resources */,
 				388C9D5E1F13EAF8002C1164 /* Main.storyboard in Resources */,
+				384AA66E1F306BB70092E1CD /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,9 +498,15 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WICS/Pods-WICS-resources.sh",
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle,
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -342,9 +519,30 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WICS/Pods-WICS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/LoremIpsum/LoremIpsum.framework",
+				"${BUILT_PRODUCTS_DIR}/SlackTextViewController/SlackTextViewController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LoremIpsum.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlackTextViewController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -357,13 +555,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WICS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -374,34 +575,52 @@
 			buildActionMask = 2147483647;
 			files = (
 				380F67AD1F16886100DBD5EC /* User.swift in Sources */,
+				384AA66B1F306BB70092E1CD /* UIResponder+SLKAdditions.m in Sources */,
 				380F67C31F1D26AA00DBD5EC /* SlideOutCAT.swift in Sources */,
 				380F67BA1F194BCD00DBD5EC /* EditPostVC.swift in Sources */,
 				380F67C71F1F408400DBD5EC /* PostService.swift in Sources */,
 				388C9D771F1536F8002C1164 /* LoginViewController.swift in Sources */,
+				384AA67E1F306BBF0092E1CD /* LoremIpsum-dummy.m in Sources */,
 				380F67D91F21DA2C00DBD5EC /* FollowService.swift in Sources */,
 				384AA56C1F2BAB960092E1CD /* LocationManager.swift in Sources */,
 				384AA55E1F28750C0092E1CD /* NearbyViewController.swift in Sources */,
+				384AA6691F306BB70092E1CD /* SLKTextViewController.m in Sources */,
+				384AA67B1F306BBF0092E1CD /* LoremIpsum.m in Sources */,
+				384AA6651F306BB70092E1CD /* SLKTextInput+Implementation.m in Sources */,
 				380F67B11F16E5DE00DBD5EC /* UserService.swift in Sources */,
 				38E353ED1F2703F900FBA056 /* AddressDecoder.swift in Sources */,
 				384AA5671F2BAB680092E1CD /* NetworkViewController.swift in Sources */,
 				380F67C91F1FFC2100DBD5EC /* StorageReference+Post.swift in Sources */,
 				380F67D11F2016FD00DBD5EC /* PostActionCell.swift in Sources */,
 				380F67B61F17EF4100DBD5EC /* Storyboard+Utility.swift in Sources */,
+				384AA63C1F3069BE0092E1CD /* Message.m in Sources */,
 				388C9D5B1F13EAF8002C1164 /* ViewController.swift in Sources */,
 				380F67CF1F20101300DBD5EC /* PostDisplayCell.swift in Sources */,
+				384AA6421F306A940092E1CD /* MessageTextView.m in Sources */,
+				384AA66D1F306BB70092E1CD /* UIView+SLKAdditions.m in Sources */,
 				380F67BF1F1D20F600DBD5EC /* DimmingPC.swift in Sources */,
 				384AA5651F2BAB510092E1CD /* LikeService.swift in Sources */,
+				384AA6661F306BB70092E1CD /* SLKTextInputbar.m in Sources */,
 				380F67B31F17EEAB00DBD5EC /* Constants.swift in Sources */,
+				384AA6701F306BB70092E1CD /* SlackTextViewController-dummy.m in Sources */,
 				380F67D31F2025C100DBD5EC /* StorageService.swift in Sources */,
+				384AA66C1F306BB70092E1CD /* UIScrollView+SLKAdditions.m in Sources */,
 				380F67C51F1ED53000DBD5EC /* Post.swift in Sources */,
+				384AA66A1F306BB70092E1CD /* SLKTypingIndicatorView.m in Sources */,
+				384AA6451F306AF50092E1CD /* TypingIndicatorView.m in Sources */,
 				380F67B81F18218600DBD5EC /* MainViewController.swift in Sources */,
 				380F67BD1F19881500DBD5EC /* BounceCAT.swift in Sources */,
+				384AA6671F306BB70092E1CD /* SLKTextView.m in Sources */,
 				380F67C11F1D231A00DBD5EC /* GradientView.swift in Sources */,
+				384AA63E1F3069E00092E1CD /* MessageTableViewCell.m in Sources */,
+				384AA5C51F3048ED0092E1CD /* MessageViewController.swift in Sources */,
 				380F67AF1F16A33B00DBD5EC /* CreateUsernameViewController.swift in Sources */,
 				380F67CB1F200BAD00DBD5EC /* PostHeaderCell.swift in Sources */,
+				384AA6641F306BB70092E1CD /* SLKInputAccessoryView.m in Sources */,
 				388C9D591F13EAF8002C1164 /* AppDelegate.swift in Sources */,
 				380F67DD1F21E1EA00DBD5EC /* NetworkTableViewCell.swift in Sources */,
 				384AA5691F2BAB730092E1CD /* SearchViewController.swift in Sources */,
+				384AA6681F306BB70092E1CD /* SLKTextView+SLKAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,8 +749,10 @@
 				DEVELOPMENT_TEAM = 83CN769XLY;
 				INFOPLIST_FILE = WICS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rosaliadupont.WICS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WICS/WICS-Bridging-MyHeader.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -545,8 +766,10 @@
 				DEVELOPMENT_TEAM = 83CN769XLY;
 				INFOPLIST_FILE = WICS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rosaliadupont.WICS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WICS/WICS-Bridging-MyHeader.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

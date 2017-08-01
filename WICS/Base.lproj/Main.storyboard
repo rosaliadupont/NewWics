@@ -195,7 +195,7 @@
                                     <constraint firstAttribute="width" constant="57" id="87M-SA-7Xt"/>
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                                <state key="normal" image="iPhone 7"/>
+                                <state key="normal" image="Group-1"/>
                                 <connections>
                                     <action selector="addButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="meL-jn-cVu"/>
                                     <segue destination="m3Z-Kb-9So" kind="presentation" identifier="toEdit" id="19u-bd-awH"/>
@@ -239,10 +239,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="Iuj-eB-F0E">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" image="ic_menu" id="lMw-fS-R01">
+                        <barButtonItem key="leftBarButtonItem" image="chat icon" id="lMw-fS-R01">
                             <color key="tintColor" red="0.99607843137254903" green="0.69411764705882351" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="menuButtonTapped:" destination="BYZ-38-t0r" id="A0T-dM-rYX"/>
+                                <segue destination="PrR-ua-fEF" kind="show" id="XNQ-UK-1Rl"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="ic_search" id="h60-AI-x8d">
@@ -410,7 +411,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8F-zu-cQD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1797.5999999999999" y="-646.32683658170924"/>
+            <point key="canvasLocation" x="1465" y="-646"/>
+        </scene>
+        <!--Message View Controller-->
+        <scene sceneID="Pwt-ou-S72">
+            <objects>
+                <viewController id="PrR-ua-fEF" customClass="MessageViewController" customModule="WICS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="amX-fz-Eh7"/>
+                        <viewControllerLayoutGuide type="bottom" id="bG2-wR-VAt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gPE-nb-3bb">
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YDy-ig-lkA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-259.4202898550725" y="103.53260869565219"/>
         </scene>
         <!--Network View Controller-->
         <scene sceneID="FCU-gt-mCf">
@@ -487,7 +506,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rnq-So-lFX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895.6521739130435" y="60.326086956521742"/>
+            <point key="canvasLocation" x="538" y="139"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="47X-L5-VYs">
@@ -552,14 +571,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EpY-nm-42X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1556" y="112.89355322338831"/>
+            <point key="canvasLocation" x="1328" y="55"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Q7v-BI-Dfg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jxm-KH-lTy" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="2uD-ue-Uwr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="2uD-ue-Uwr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -576,10 +595,10 @@
     <resources>
         <image name="Artboard" width="49" height="51"/>
         <image name="BACK" width="23" height="23"/>
+        <image name="Group-1" width="45" height="43"/>
         <image name="PIN" width="63" height="63"/>
         <image name="Page 1" width="25" height="20"/>
-        <image name="iPhone 7" width="52" height="51"/>
-        <image name="ic_menu" width="25" height="20"/>
+        <image name="chat icon" width="22" height="16"/>
         <image name="ic_search" width="22" height="21"/>
         <image name="icon-like-normal" width="20" height="18"/>
         <image name="icon-like-selected" width="20" height="18"/>

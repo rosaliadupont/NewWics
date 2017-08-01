@@ -19,21 +19,21 @@ class Post {
     let title: String?
     let creationDate: Date
     let eventDate: String?
-    let location: [String: String?]
+    let location: [String: Any]
     let description: String?
     let poster: User
     
     var likeCount: Int
     var isLiked = false
     
-    init?(title: String?, eventDate: String?, address: String?, city: String?, latitude: String?, longitude: String?, description: String?) {
+    init?(title: String?, eventDate: String?, address: String?, city: String?, latitude: Double?, longitude: Double?, description: String?) {
         if title != nil, eventDate != nil, address != nil, city != nil, longitude != nil, latitude != nil, description != nil {
             self.title = title
             self.eventDate = eventDate
-            let locationDict = ["address" : address,
-                                "city": city,
-                                "longitude": longitude,
-                                "latitude": latitude]
+            let locationDict : [String: Any] = ["address" : address ?? "",
+                                "city": city ?? "",
+                                "longitude": longitude ?? 0,
+                                "latitude": latitude ?? 0]
             self.location = locationDict
             self.description = description
             self.creationDate = Date()
@@ -65,7 +65,7 @@ class Post {
         guard let dict = snapshot.value as? [String : Any],
             let title = dict["title"] as? String,
             let eventDate = dict["date_of_event"] as? String,
-        let location = dict["location"] as? [String: String?],
+            let location = dict["location"] as? [String: Any],
             let description = dict["description"] as? String,
             let createdAgo = dict["created_at"] as? TimeInterval,
             let userDict = dict["poster"] as? [String : Any],

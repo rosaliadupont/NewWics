@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import FirebaseAuth.FIRUser
 import FirebaseDatabase
+import CoreLocation
+import MapKit
 
 //this struct contains all of the user-related networking
 //code here
@@ -65,7 +67,6 @@ struct UserService {
                 
                 LikeService.isPostLiked(post) { (isLiked) in
                     post.isLiked = isLiked
-                    
                     dispatchGroup.leave()
                 }
                 
@@ -98,7 +99,7 @@ struct UserService {
     
     // MARK: - Potential error
     /* this is called from mainviewcontroller */
-    static func timeline(completion: @escaping ([Post]) -> Void) {
+    static func timeline(userLocation: CLLocation, completion: @escaping ([Post]) -> Void) {
         let currentUser = User.current
 
         let timelineRef = Database.database().reference().child("timeline").child(currentUser.uid)
@@ -109,11 +110,15 @@ struct UserService {
             
             let dispatchGroup = DispatchGroup()
             
+            struct PostCoordinate {
+                var postID: String = ""
+                var coordinate:CLLocation = CLLocation()
+            }
+ 
             var posts = [Post]()
+            let maxRadius: CLLocationDistance = 40233.6
             
             for postSnap in snapshot {
-
-                
                 guard let postDict = postSnap.value as? [String : Any],
                     let posterUID = postDict["poster_uid"] as? String
                     else { continue }
@@ -122,15 +127,25 @@ struct UserService {
                 
                 PostService.show(forKey: postSnap.key, posterUID: posterUID) { (post) in
                     if let post = post {
-                        posts.append(post)
+                        let latitude = post.location["latitude"]!
+                        let longitude =  post.location["longitude"]!
+                        
+                        let postLocation: CLLocation = CLLocation(latitude: latitude as! CLLocationDegrees, longitude: longitude as! CLLocationDegrees)
+                        
+                        let distanceFromPost = userLocation.distance(from: postLocation)
+                        if maxRadius >= distanceFromPost {
+                            posts.append(post)
+                        }
+                        
                     }
-                    
                     dispatchGroup.leave()
                 }
             }
             
+            
             dispatchGroup.notify(queue: .main, execute: {
-                completion(posts.reversed())
+
+                completion(posts.sorted(by: { $0.0.eventDate! < $0.1.eventDate! }))
             })
         })
     }

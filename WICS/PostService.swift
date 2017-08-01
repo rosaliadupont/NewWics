@@ -14,7 +14,7 @@ struct PostService {
     
     /*this is to create the database reference with post's information */
     
-    static func create(title: String, eventDate: String, address: String, city: String, latitude: String, longitude: String, description: String, completion: @escaping (Bool?)->Void ){
+    static func create(title: String, eventDate: String, address: String, city: String, latitude: Double, longitude: Double, description: String, completion: @escaping (Bool?)->Void ){
         // create new post in database
         //1 this creates a user reference to current user
         let currentUser = User.current

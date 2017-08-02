@@ -5,7 +5,7 @@
 //  Created by Rosalia Dupont on 7/31/17.
 //  Copyright © 2017 Make School. All rights reserved.
 //
-import Foundation
+/*import Foundation
 import UIKit
 import SlackTextViewController
 import LoremIpsum
@@ -759,3 +759,4 @@ class MessageViewController: SLKTextViewController {
         super.init(coder: aDecoder)
     }
 }*/
+ */

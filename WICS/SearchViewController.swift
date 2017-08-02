@@ -32,8 +32,6 @@ class SearchViewController: UIViewController {
         UIApplication.shared.statusBarStyle = .lightContent
         view.backgroundColor = .black
         
-        
-        
     }
     @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true)

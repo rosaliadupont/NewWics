@@ -16,6 +16,8 @@ target 'WICS' do
   pod 'GoogleSignIn'
   pod 'GooglePlaces'
   pod 'SlackTextViewController'
+  pod 'JSQMessagesViewController'
+
 
   pod 'LoremIpsum', '~> 1.0'
 end

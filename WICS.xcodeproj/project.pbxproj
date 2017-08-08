@@ -64,6 +64,11 @@
 		384AA6961F31465D0092E1CD /* NewChatUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AA6951F31465D0092E1CD /* NewChatUserCell.swift */; };
 		384AA6981F31490E0092E1CD /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AA6971F31490E0092E1CD /* ChatViewController.swift */; };
 		384AA69A1F3243890092E1CD /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AA6991F3243890092E1CD /* ChatListViewController.swift */; };
+		384AA69C1F32CDB10092E1CD /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AA69B1F32CDB10092E1CD /* APIClient.swift */; };
+		384AA69E1F339CB80092E1CD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AA69D1F339CB80092E1CD /* Utils.swift */; };
+		384AA6A01F33BE170092E1CD /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AA69F1F33BE170092E1CD /* String.swift */; };
+		384AA6A21F33D0A30092E1CD /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AA6A11F33D0A30092E1CD /* NSURL.swift */; };
+		3864F8A51F3914F30041D21C /* GraphApiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864F8A41F3914F30041D21C /* GraphApiVC.swift */; };
 		388C9D591F13EAF8002C1164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C9D581F13EAF8002C1164 /* AppDelegate.swift */; };
 		388C9D5B1F13EAF8002C1164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C9D5A1F13EAF8002C1164 /* ViewController.swift */; };
 		388C9D5E1F13EAF8002C1164 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 388C9D5C1F13EAF8002C1164 /* Main.storyboard */; };
@@ -158,6 +163,11 @@
 		384AA6951F31465D0092E1CD /* NewChatUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewChatUserCell.swift; sourceTree = "<group>"; };
 		384AA6971F31490E0092E1CD /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		384AA6991F3243890092E1CD /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatListViewController.swift; path = WICS/ChatListViewController.swift; sourceTree = "<group>"; };
+		384AA69B1F32CDB10092E1CD /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		384AA69D1F339CB80092E1CD /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		384AA69F1F33BE170092E1CD /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		384AA6A11F33D0A30092E1CD /* NSURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURL.swift; sourceTree = "<group>"; };
+		3864F8A41F3914F30041D21C /* GraphApiVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphApiVC.swift; sourceTree = "<group>"; };
 		388C9D551F13EAF8002C1164 /* WICS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WICS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		388C9D581F13EAF8002C1164 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		388C9D5A1F13EAF8002C1164 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = WICS/ViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +237,11 @@
 			isa = PBXGroup;
 			children = (
 				384AA56B1F2BAB960092E1CD /* LocationManager.swift */,
+				384AA69B1F32CDB10092E1CD /* APIClient.swift */,
+				384AA69D1F339CB80092E1CD /* Utils.swift */,
+				384AA69F1F33BE170092E1CD /* String.swift */,
+				384AA6A11F33D0A30092E1CD /* NSURL.swift */,
+				3864F8A41F3914F30041D21C /* GraphApiVC.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -544,6 +559,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WICS/Pods-WICS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -554,11 +570,14 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/LoremIpsum/LoremIpsum.framework",
 				"${BUILT_PRODUCTS_DIR}/SlackTextViewController/SlackTextViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -569,8 +588,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LoremIpsum.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlackTextViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -602,12 +623,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				384AA6A01F33BE170092E1CD /* String.swift in Sources */,
 				380F67AD1F16886100DBD5EC /* User.swift in Sources */,
 				384AA66B1F306BB70092E1CD /* UIResponder+SLKAdditions.m in Sources */,
 				380F67C31F1D26AA00DBD5EC /* SlideOutCAT.swift in Sources */,
 				384AA6941F313FD90092E1CD /* NewChatViewController.swift in Sources */,
 				380F67BA1F194BCD00DBD5EC /* EditPostVC.swift in Sources */,
 				380F67C71F1F408400DBD5EC /* PostService.swift in Sources */,
+				384AA6A21F33D0A30092E1CD /* NSURL.swift in Sources */,
 				388C9D771F1536F8002C1164 /* LoginViewController.swift in Sources */,
 				384AA67E1F306BBF0092E1CD /* LoremIpsum-dummy.m in Sources */,
 				380F67D91F21DA2C00DBD5EC /* FollowService.swift in Sources */,
@@ -619,6 +642,7 @@
 				384AA6651F306BB70092E1CD /* SLKTextInput+Implementation.m in Sources */,
 				380F67B11F16E5DE00DBD5EC /* UserService.swift in Sources */,
 				38E353ED1F2703F900FBA056 /* AddressDecoder.swift in Sources */,
+				384AA69E1F339CB80092E1CD /* Utils.swift in Sources */,
 				384AA5671F2BAB680092E1CD /* NetworkViewController.swift in Sources */,
 				384AA69A1F3243890092E1CD /* ChatListViewController.swift in Sources */,
 				380F67C91F1FFC2100DBD5EC /* StorageReference+Post.swift in Sources */,
@@ -627,6 +651,7 @@
 				380F67D11F2016FD00DBD5EC /* PostActionCell.swift in Sources */,
 				380F67B61F17EF4100DBD5EC /* Storyboard+Utility.swift in Sources */,
 				384AA63C1F3069BE0092E1CD /* Message.m in Sources */,
+				3864F8A51F3914F30041D21C /* GraphApiVC.swift in Sources */,
 				388C9D5B1F13EAF8002C1164 /* ViewController.swift in Sources */,
 				380F67CF1F20101300DBD5EC /* PostDisplayCell.swift in Sources */,
 				384AA6421F306A940092E1CD /* MessageTextView.m in Sources */,
@@ -645,6 +670,7 @@
 				384AA6451F306AF50092E1CD /* TypingIndicatorView.m in Sources */,
 				380F67B81F18218600DBD5EC /* MainViewController.swift in Sources */,
 				380F67BD1F19881500DBD5EC /* BounceCAT.swift in Sources */,
+				384AA69C1F32CDB10092E1CD /* APIClient.swift in Sources */,
 				384AA6671F306BB70092E1CD /* SLKTextView.m in Sources */,
 				384AA68A1F312EB00092E1CD /* Chat.swift in Sources */,
 				380F67C11F1D231A00DBD5EC /* GradientView.swift in Sources */,

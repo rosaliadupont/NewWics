@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 import CoreLocation
 import MapKit
+import SwiftyJSON
+import Alamofire
+import FBSDKCoreKit
+import FacebookCore
 
 let timestampFormatter: DateFormatter = {
     let dateFormatter = DateFormatter()
@@ -32,6 +36,17 @@ class MainViewController: UIViewController, EditPostVCDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        AccessToken.refreshCurrentToken({ token, error in
+            if let token = token {
+                print(token)
+            } else {
+                print(error!.localizedDescription)
+            }
+        })
+        
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "wics_back_6")!)
+        
         configureTableView()
         
         UIApplication.shared.statusBarStyle = .lightContent
@@ -65,6 +80,26 @@ class MainViewController: UIViewController, EditPostVCDelegate {
             self.navigationItem.title = placemark?.locality
             self.userLocation = CLLocation(latitude: (placemark?.location?.coordinate.latitude)!, longitude: (placemark?.location?.coordinate.longitude)!)
             self.reloadTimeLine()
+            
+            let baseApiUrl = "https://www.eventbriteapi.com/v3/events/34932732744/"
+
+            
+            let header: HTTPHeaders = ["Authorization": "Bearer PWRLWUMRMO2KKGLESFOJ"]
+            var venueid = ""
+            Alamofire.request(baseApiUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: header).responseJSON { (response) in
+                let json = JSON(with: response.data!)
+                venueid = json["venue_id"].stringValue
+                print("HEREEE WTFFFF" + venueid)
+                
+                let venueurl = "https://www.eventbriteapi.com/v3/venues/" + venueid + "/"
+                
+                Alamofire.request(venueurl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: header).responseJSON { (response) in
+                    let json = JSON(with: response.data!)
+                    print(json)
+                }
+                
+                print(json)
+            }
         }
         
         

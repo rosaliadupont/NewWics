@@ -51,7 +51,7 @@ class ChatViewController: JSQMessagesViewController {
         title = chat.title
         
         // 2. remove attachment button
-        inputToolbar.contentView.leftBarButtonItem = nil
+        //inputToolbar.contentView.leftBarButtonItem = nil
         
         // 3. remove avatars
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
@@ -159,6 +159,200 @@ extension ChatViewController {
         
         // 4
         JSQSystemSoundPlayer.jsq_playMessageSentAlert()
+        
+        if message.content.range(of: "eventbrite.com/e") != nil {
+            
+            let input = message.content
+            let detector = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
+            let matches = detector.matches(in: input, options: [], range: NSRange(location: 0, length: input.utf16.count))
+            var url = ""
+            
+            for match in matches {
+                url = (input as NSString).substring(with: match.range)
+            }
+            
+            let url1 = URL(string: url)!
+            
+            let components = URLComponents(url: url1, resolvingAgainstBaseURL: false)!
+            let splitArr = components.path.components(separatedBy: CharacterSet(charactersIn: "-") )
+            let last = splitArr.last
+            print(last ?? "NOTHING")
+            
+            if last != "NOTHING" {
+                ApiClient.apiCall(last!) { (post) in
+
+                print(post?.title ?? "NOTHING RECOGNIZED")
+                    
+                    PostService.create(title: (post?.title)!, eventDate: (post?.eventDate)!, address: post?.location["address"] as! String, city: post?.location["city"] as! String, latitude: post?.location["latitude"] as! Double, longitude: post?.location["longitude"] as! Double, description: (post?.description)!, completion: { (succeeded) in
+                        
+                        if succeeded! {
+                            print("chat post in database's timeline")
+                            
+                        }
+                        else {
+                            print("chat post NOT in database's timeline")
+                            
+                        }
+                    })
+                }
+            }
+            
+            
+            else { return }
+            
+            
+            
+        }
+        else if message.content.range(of: "facebook.com/events/") != nil {
+            var str = message.content
+            
+            let detector = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
+            let matches = detector.matches(in: str, options: [], range: NSRange(location: 0, length: str.utf16.count))
+            var url = ""
+            
+            for match in matches {
+                url = (str as NSString).substring(with: match.range)
+            }
+            
+            let url1 = URL(string: url)!
+            
+            let components = URLComponents(url: url1, resolvingAgainstBaseURL: false)!
+            
+            print(components.path)
+            
+            var truncated = ""
+            
+            if components.path.characters.last == "/" {
+                truncated = components.path.substring(to: components.path.index(before: components.path.endIndex))
+                print(truncated)
+            } else {
+                truncated = components.path
+            }
+            
+            let splitArr = truncated.components(separatedBy: CharacterSet(charactersIn: "/") )
+            let last = splitArr.last
+            print(last ?? "NOTHING")
+            
+            if last != "NOTHING" {
+                GraphAPIVC.readEvent(path: last!) { (succeeded) in
+                    
+                    if succeeded {
+                        print("GRAPH API SUCCEDED")
+                    }
+                    else {
+                        print("ERROR IN READING EVENT!!")
+                    }
+                    
+                    /*PostService.create(title: (post?.title)!, eventDate: (post?.eventDate)!, address: post?.location["address"] as! String, city: post?.location["city"] as! String, latitude: post?.location["latitude"] as! Double, longitude: post?.location["longitude"] as! Double, description: (post?.description)!, completion: { (succeeded) in
+                        
+                        if succeeded! {
+                            print("chat post in database's timeline")
+                            
+                        }
+                        else {
+                            print("chat post NOT in database's timeline")
+                            
+                        }
+                    })*/
+                }
+            }
+            
+        }
+
+    }
+   
+    // MARK: JSQMessagesViewController method overrides
+    
+    override func didPressAccessoryButton(_ sender: UIButton) {
+        self.inputToolbar.contentView!.textView!.resignFirstResponder()
+        
+        let sheet = UIAlertController(title: "Media messages", message: nil, preferredStyle: .actionSheet)
+        
+        let photoAction = UIAlertAction(title: "Send photo", style: .default) { (action) in
+            /**
+             *  Create fake photo
+             */
+            let photoItem = JSQPhotoMediaItem(image: UIImage(named: "wics_back_1"))
+            self.addMedia(photoItem!)
+        }
+        
+        let locationAction = UIAlertAction(title: "Send location", style: .default) { (action) in
+            /**
+             *  Add fake location
+             */
+            let locationItem = self.buildLocationItem()
+            
+            self.addMedia(locationItem)
+        }
+        
+        let videoAction = UIAlertAction(title: "Send video", style: .default) { (action) in
+            /**
+             *  Add fake video
+             */
+            let videoItem = self.buildVideoItem()
+            
+            self.addMedia(videoItem)
+        }
+        
+        let audioAction = UIAlertAction(title: "Send audio", style: .default) { (action) in
+            /**
+             *  Add fake audio
+             */
+            let audioItem = self.buildAudioItem()
+            
+            self.addMedia(audioItem)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        sheet.addAction(photoAction)
+        sheet.addAction(locationAction)
+        sheet.addAction(videoAction)
+        sheet.addAction(audioAction)
+        sheet.addAction(cancelAction)
+        
+        self.present(sheet, animated: true, completion: nil)
+    }
+    
+    func buildVideoItem() -> JSQVideoMediaItem {
+        let videoURL = URL(fileURLWithPath: "file://")
+        
+        let videoItem = JSQVideoMediaItem(fileURL: videoURL, isReadyToPlay: true)
+        
+        
+        return videoItem!
+    }
+    
+    func buildAudioItem() -> JSQAudioMediaItem {
+        let sample = Bundle.main.path(forResource: "jsq_messages_sample", ofType: "m4a")
+        let audioData = try? Data(contentsOf: URL(fileURLWithPath: sample!))
+        
+        let audioItem = JSQAudioMediaItem(data: audioData)
+        
+        return audioItem
+    }
+    
+    func buildLocationItem() -> JSQLocationMediaItem {
+        let ferryBuildingInSF = CLLocation(latitude: 37.795313, longitude: -122.393757)
+        
+        let locationItem = JSQLocationMediaItem()
+        locationItem.setLocation(ferryBuildingInSF) {
+            self.collectionView!.reloadData()
+        }
+        
+        return locationItem
+    }
+    
+    func addMedia(_ media:JSQMediaItem) {
+        let mediamessage = Message(content: "this is a media message to test")
+        let message = JSQMessage(senderId: self.senderId, displayName: self.senderDisplayName, media: media)
+        mediamessage.jsqMessageValue = message!
+
+        self.messages.append(mediamessage)
+        
+        //Optional: play sent sound
+        
+        self.finishSendingMessage(animated: true)
     }
     
 

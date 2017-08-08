@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuthUI
-
+import FBSDKLoginKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         configureInitialRootViewController(for: window)
         
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         return true
     }
     
@@ -31,14 +32,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         back to our app after a user has logged in */
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String?
+        let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+        
+        return handled
+        
+        
+        
+        /*let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String?
         if FUIAuth.defaultAuthUI()?.handleOpen(url, sourceApplication: sourceApplication) ?? false {
             return true
         }
         
         // other URL handling goes here
         
-        return false
+        return false*/
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -61,6 +68,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+}
+
+///Function that rounds the corners on any desired view.
+///Numbers 0 through 4 correspond to all, left, right, top, and bottom, respectively.
+func roundCorners(forViews: [UIView], withCornerType: Int!)
+{
+    for individualView in forViews
+    {
+        var cornersToRound: UIRectCorner!
+        
+        if withCornerType == 0
+        {
+            //All corners.
+            cornersToRound = UIRectCorner.allCorners
+        }
+        else if withCornerType == 1
+        {
+            //Left corners.
+            cornersToRound = UIRectCorner.topLeft.union(UIRectCorner.bottomLeft)
+        }
+        else if withCornerType == 2
+        {
+            //Right corners.
+            cornersToRound = UIRectCorner.topRight.union(UIRectCorner.bottomRight)
+        }
+        else if withCornerType == 3
+        {
+            //Top corners.
+            cornersToRound = UIRectCorner.topLeft.union(UIRectCorner.topRight)
+        }
+        else if withCornerType == 4
+        {
+            //Bottom corners.
+            cornersToRound = UIRectCorner.bottomLeft.union(UIRectCorner.bottomRight)
+        }
+        
+        let maskPathForView: UIBezierPath = UIBezierPath(roundedRect: individualView.bounds,
+                                                         byRoundingCorners: cornersToRound,
+                                                         cornerRadii: CGSize(width: 5.0, height: 5.0))
+        
+        let maskLayerForView: CAShapeLayer = CAShapeLayer()
+        
+        maskLayerForView.frame = individualView.bounds
+        maskLayerForView.path = maskPathForView.cgPath
+        
+        individualView.layer.mask = maskLayerForView
+        individualView.layer.masksToBounds = false
+        individualView.clipsToBounds = true
     }
 }
 

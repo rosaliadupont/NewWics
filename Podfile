@@ -17,7 +17,8 @@ target 'WICS' do
   pod 'GooglePlaces'
   pod 'SlackTextViewController'
   pod 'JSQMessagesViewController'
-
-
+  pod 'Alamofire'
+  pod 'Kingfisher'
   pod 'LoremIpsum', '~> 1.0'
+  pod 'SwiftyJSON'
 end

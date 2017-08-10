@@ -33,7 +33,6 @@ class ApiClient {
             
             let eventjson = JSON(with: response.data!)
             venueid = eventjson["venue_id"].stringValue
-            print("HEREEE " + venueid)
             
             let venueurl = "https://www.eventbriteapi.com/v3/venues/" + venueid + "/"
             
@@ -63,21 +62,33 @@ class ApiClient {
     
     /*static func fbApiCall(_ eventid: String, completion: @escaping (Post?) -> Void) {
         let params = ["fields" : "data,description" ]
-        let graphRequest:FBSDKGraphRequest = FBSDKGraphRequest(graphPath: eventid, parameters: params, accessToken: AccessToken(authenticationToken:"EAAUTNa6bZCB0BAAIvejFKwZCpNVjVqHtm9ZB8TZCrcy5rf82Husxlecs2ZBpIn886hRPxXvJBOnFgTKvEb1KnihTw0v7v8JK5wP1XD6PoR2AOiQj4PPZBt5Ew9wveo2OViTdO2OBZBgfjzc0DsW6XL9RuT83hdAUftZAt3pXzk7ZALgZDZD"), httpMethod: GraphRequestHTTPMethod(rawValue: "GET")!)
-        graphRequest.start {
-            (urlResponse, requestResult) in
-            
-            switch requestResult {
-            case .failed(let error):
-                print("error in graph request:", error)
-                break
-            case .success(let graphResponse):
-                if let responseDictionary = graphResponse.dictionaryValue {
-                    print("\(#function) \(responseDictionary)")
+        AccessToken.refreshCurrentToken({ token, error in
+            if let token = token {
+                
+                print("here is the token: \(token)")
+                
+                let graphRequest: GraphRequest = GraphRequest(graphPath: "/\(eventid)", parameters: params, accessToken: token, httpMethod: GraphRequestHTTPMethod(rawValue: "GET")!)
+                
+                graphRequest.start {
+                    (urlResponse, requestResult) in
+                    
+                    switch requestResult {
+                    case .failed(let error):
+                        print("error in graph request:", error)
+                        completion(false)
+                    case .success(let graphResponse):
+                        if let responseDictionary = graphResponse.dictionaryValue {
+                            print("\(#function) \(responseDictionary)")
+                        }
+                    }
+                    completion(true)
                 }
+            } else {
+                print(error!.localizedDescription)
+                completion(false)
             }
-            completion(nil)
-        }
+        })
+        
     }*/
     
     

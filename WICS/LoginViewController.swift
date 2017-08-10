@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         
-        /*let fbLoginManager = FBSDKLoginManager()
+        let fbLoginManager = FBSDKLoginManager()
         fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
             if let error = error {
                 print("Failed to login: \(error.localizedDescription)")
@@ -60,34 +60,39 @@ class LoginViewController: UIViewController {
                     return
                 }
                 
-                // Present the main view
-                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "CreateUsername") {
-                    UIApplication.shared.keyWindow?.rootViewController = viewController
-                    self.dismiss(animated: true, completion: nil)
+         
+                /*guard let authUI = FUIAuth.defaultAuthUI()
+                else { return }
+         
+                authUI.delegate = self*/
+                
+                UserService.show(forUID: (user?.uid)!) { (user) in
+                    if let user = user {
+                        
+                        //handle existing user
+                        User.setCurrent(user, writeToUserDefaults: true)
+                        
+                        let initialViewController = UIStoryboard.initialViewController(for: .main)
+                        self.view.window?.rootViewController = initialViewController
+                        self.view.window?.makeKeyAndVisible()
+                    }
+                        
+                    else {
+                        // handle new user
+                        self.performSegue(withIdentifier: Constants.segue.toCreateUsername, sender: self)
+                    }
+                    
                 }
                 
             })
             
-        }*/
-        
-        //this is for normal login
-        guard let authUI = FUIAuth.defaultAuthUI()
-            else { return }
-        
-        authUI.delegate = self
-        
-        // configure Auth UI for Facebook login
-        let providers: [FUIAuthProvider] = [FUIFacebookAuth()]
-        authUI.providers = providers
-        
-        let authViewController = authUI.authViewController()
-        present(authViewController, animated: true)
+        }
         
     }
 
 }
 
-extension LoginViewController: FUIAuthDelegate{
+/*extension LoginViewController: FUIAuthDelegate{
     
     func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
         
@@ -119,5 +124,5 @@ extension LoginViewController: FUIAuthDelegate{
         }
     }
 }
-    
+  */
 

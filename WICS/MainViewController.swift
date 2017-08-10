@@ -37,14 +37,6 @@ class MainViewController: UIViewController, EditPostVCDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        AccessToken.refreshCurrentToken({ token, error in
-            if let token = token {
-                print(token)
-            } else {
-                print(error!.localizedDescription)
-            }
-        })
-        
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "wics_back_6")!)
         
         configureTableView()
@@ -81,25 +73,6 @@ class MainViewController: UIViewController, EditPostVCDelegate {
             self.userLocation = CLLocation(latitude: (placemark?.location?.coordinate.latitude)!, longitude: (placemark?.location?.coordinate.longitude)!)
             self.reloadTimeLine()
             
-            let baseApiUrl = "https://www.eventbriteapi.com/v3/events/34932732744/"
-
-            
-            let header: HTTPHeaders = ["Authorization": "Bearer PWRLWUMRMO2KKGLESFOJ"]
-            var venueid = ""
-            Alamofire.request(baseApiUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: header).responseJSON { (response) in
-                let json = JSON(with: response.data!)
-                venueid = json["venue_id"].stringValue
-                print("HEREEE WTFFFF" + venueid)
-                
-                let venueurl = "https://www.eventbriteapi.com/v3/venues/" + venueid + "/"
-                
-                Alamofire.request(venueurl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: header).responseJSON { (response) in
-                    let json = JSON(with: response.data!)
-                    print(json)
-                }
-                
-                print(json)
-            }
         }
         
         
@@ -173,17 +146,6 @@ class MainViewController: UIViewController, EditPostVCDelegate {
             guard let _ = location else {
                 return
             }
-            /*print(placemark?.administrativeArea ?? "")
-             print(placemark?.name ?? "")
-             print(placemark?.country ?? "")
-             print(placemark?.areasOfInterest ?? "")
-             print(placemark?.isoCountryCode ?? "")
-             print(placemark?.location ?? "")
-             print(placemark?.locality ?? "")
-             print(placemark?.subLocality ?? "")
-             print(placemark?.postalCode ?? "")
-             print(placemark?.timeZone ?? "")
-             print(placemark?.addressDictionary?.description ?? "") */
             
             print("this is latitude: \((placemark?.location?.coordinate.latitude)!)")
             print( "this is longitude: \((placemark?.location?.coordinate.longitude)!)")

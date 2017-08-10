@@ -116,7 +116,7 @@ struct UserService {
             }
  
             var posts = [Post]()
-            let maxRadius: CLLocationDistance = 40233.6
+            let maxRadius: CLLocationDistance = 40233000.6
             
             for postSnap in snapshot {
                 guard let postDict = postSnap.value as? [String : Any],

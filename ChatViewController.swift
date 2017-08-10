@@ -143,11 +143,14 @@ extension ChatViewController {
                 
                 // 3
                 self?.tryObservingMessages()
+            
             })
         } else {
             // 4
             ChatService.sendMessage(message, for: chat)
         }
+        
+        
     }
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         // 1
@@ -234,26 +237,26 @@ extension ChatViewController {
             print(last ?? "NOTHING")
             
             if last != "NOTHING" {
-                GraphAPIVC.readEvent(path: last!) { (succeeded) in
+                GraphAPIVC.readEvent(path: last!) { (post) in
                     
-                    if succeeded {
-                        print("GRAPH API SUCCEDED")
+                    if post != nil {
+                        
+                        PostService.create(title: (post?.title)!, eventDate: (post?.eventDate)!, address: post?.location["address"] as! String, city: post?.location["city"] as! String, latitude: post?.location["latitude"] as! Double, longitude: post?.location["longitude"] as! Double, description: (post?.description)!, completion: { (succeeded) in
+                            
+                            if succeeded! {
+                                print("chat post in database's timeline")
+                                
+                            }
+                            else {
+                                print("chat post NOT in database's timeline")
+                                
+                            }
+                        })
                     }
                     else {
                         print("ERROR IN READING EVENT!!")
                     }
                     
-                    /*PostService.create(title: (post?.title)!, eventDate: (post?.eventDate)!, address: post?.location["address"] as! String, city: post?.location["city"] as! String, latitude: post?.location["latitude"] as! Double, longitude: post?.location["longitude"] as! Double, description: (post?.description)!, completion: { (succeeded) in
-                        
-                        if succeeded! {
-                            print("chat post in database's timeline")
-                            
-                        }
-                        else {
-                            print("chat post NOT in database's timeline")
-                            
-                        }
-                    })*/
                 }
             }
             

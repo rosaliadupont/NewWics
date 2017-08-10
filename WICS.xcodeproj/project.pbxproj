@@ -69,6 +69,7 @@
 		384AA6A01F33BE170092E1CD /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AA69F1F33BE170092E1CD /* String.swift */; };
 		384AA6A21F33D0A30092E1CD /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AA6A11F33D0A30092E1CD /* NSURL.swift */; };
 		3864F8A51F3914F30041D21C /* GraphApiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864F8A41F3914F30041D21C /* GraphApiVC.swift */; };
+		3864F8B21F3BA9D40041D21C /* APIGraphObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864F8B11F3BA9D40041D21C /* APIGraphObjects.swift */; };
 		388C9D591F13EAF8002C1164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C9D581F13EAF8002C1164 /* AppDelegate.swift */; };
 		388C9D5B1F13EAF8002C1164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C9D5A1F13EAF8002C1164 /* ViewController.swift */; };
 		388C9D5E1F13EAF8002C1164 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 388C9D5C1F13EAF8002C1164 /* Main.storyboard */; };
@@ -168,6 +169,7 @@
 		384AA69F1F33BE170092E1CD /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		384AA6A11F33D0A30092E1CD /* NSURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURL.swift; sourceTree = "<group>"; };
 		3864F8A41F3914F30041D21C /* GraphApiVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphApiVC.swift; sourceTree = "<group>"; };
+		3864F8B11F3BA9D40041D21C /* APIGraphObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIGraphObjects.swift; sourceTree = "<group>"; };
 		388C9D551F13EAF8002C1164 /* WICS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WICS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		388C9D581F13EAF8002C1164 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		388C9D5A1F13EAF8002C1164 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = WICS/ViewController.swift; sourceTree = "<group>"; };
@@ -238,10 +240,11 @@
 			children = (
 				384AA56B1F2BAB960092E1CD /* LocationManager.swift */,
 				384AA69B1F32CDB10092E1CD /* APIClient.swift */,
+				3864F8A41F3914F30041D21C /* GraphApiVC.swift */,
 				384AA69D1F339CB80092E1CD /* Utils.swift */,
 				384AA69F1F33BE170092E1CD /* String.swift */,
 				384AA6A11F33D0A30092E1CD /* NSURL.swift */,
-				3864F8A41F3914F30041D21C /* GraphApiVC.swift */,
+				3864F8B11F3BA9D40041D21C /* APIGraphObjects.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				384AA6981F31490E0092E1CD /* ChatViewController.swift in Sources */,
 				384AA6651F306BB70092E1CD /* SLKTextInput+Implementation.m in Sources */,
 				380F67B11F16E5DE00DBD5EC /* UserService.swift in Sources */,
+				3864F8B21F3BA9D40041D21C /* APIGraphObjects.swift in Sources */,
 				38E353ED1F2703F900FBA056 /* AddressDecoder.swift in Sources */,
 				384AA69E1F339CB80092E1CD /* Utils.swift in Sources */,
 				384AA5671F2BAB680092E1CD /* NetworkViewController.swift in Sources */,

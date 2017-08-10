@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import SwiftyJSON
 import FacebookCore
 import FBSDKCoreKit
 import FBSDKLoginKit
@@ -38,19 +38,34 @@ extension GraphAPIVC {
     /**
      Fetches the currently logged in user's list of events.
      */
-    static func readEvent(path: String, completion: @escaping (Bool) -> Void) {
+    static func readEvent(path: String, completion: @escaping (Post?) -> Void) {
         
         let request = GraphRequest(graphPath: "/\(path)",
-            parameters: [ "fields" : "data, description" ],
+            parameters: [ "fields" : "description, place, name, start_time, end_time" ],
             httpMethod: .GET)
         request.start { _, result in
             switch result {
             case .success(let response):
-                print("Graph Request Succeeded: \(response)")
-                completion(true)
+                
+                let dict = JSON(response.dictionaryValue ?? [:])
+                print(dict)
+                
+               guard let title = dict["name"].string, let eventDate = dict["start_time"].string, let address = dict["place"]["location"]["street"].string, let city = dict["place"]["location"]["city"].string, let latitude = dict["place"]["location"]["latitude"].double, let longitude = dict["place"]["location"]["longitude"].double, let description = dict["description"].string
+                    else { return completion(nil) }
+                
+                print("\(#function): My longi: \(longitude)")
+                print("\(#function): My lati: \(latitude)")
+                
+                let trimmed = description.replacingOccurrences(of: "^\\s*", with: "", options: .regularExpression)
+                
+                let post = Post(title: title, eventDate: eventDate, address: address, city: city, latitude: latitude, longitude: longitude, description: trimmed)!
+                completion(post)
+                
+                
             case .failed(let error):
                 print("Graph Request Failed: \(error)")
-                completion(false)
+                completion(nil)
+
             }
         }
     }

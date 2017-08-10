@@ -98,7 +98,7 @@
         <!--Create Username Controller-->
         <scene sceneID="FBN-q9-lgW">
             <objects>
-                <viewController title="Create Username Controller" id="StP-p4-Kr0" customClass="CreateUsernameViewController" customModule="WICS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateUsername" title="Create Username Controller" id="StP-p4-Kr0" customClass="CreateUsernameViewController" customModule="WICS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mRn-yX-UeW"/>
                         <viewControllerLayoutGuide type="bottom" id="EQl-Hs-4eQ"/>

@@ -12,6 +12,7 @@ import FirebaseDatabase
 
 
 class ChatListViewController: UIViewController {
+    
     // MARK: - Properties
     
     var chats = [Chat]()

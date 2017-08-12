@@ -29,8 +29,8 @@ class NetworkViewController: UIViewController {
         // remove separators for empty cells
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
-        tableView.rowHeight = 71
-        //navigationItem.leftBarButtonItem?.image = #imageLiteral(resourceName: "BACK")
+        tableView.rowHeight = 55
+         
     }
     
     override func viewWillAppear(_ animated: Bool) {

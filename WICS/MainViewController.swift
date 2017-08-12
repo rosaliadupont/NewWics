@@ -38,12 +38,13 @@ class MainViewController: UIViewController, EditPostVCDelegate {
         super.viewDidLoad()
         
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "wics_back_6")!)
-        
+
         configureTableView()
         
         UIApplication.shared.statusBarStyle = .lightContent
         
-        navigationController!.navigationBar.barTintColor = .black
+        //navigationController!.navigationBar.barTintColor = .black
+        
         tableView.delegate = self
         tableView.dataSource = self
         

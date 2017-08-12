@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,29 +21,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2017 Rosalia Dupont. All rights reserved." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4R-8n-DXs">
-                                <rect key="frame" x="16" y="638" width="354" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pink App Logo" translatesAutoresizingMaskIntoConstraints="NO" id="umG-SE-kbd">
+                                <rect key="frame" x="101" y="217" width="174" height="177"/>
+                                <color key="backgroundColor" red="1" green="0.38823529411764707" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="1KL-jQ-U1b"/>
-                                    <constraint firstAttribute="width" constant="354" id="8zf-Qr-ayh"/>
+                                    <constraint firstAttribute="width" constant="174" id="5Fb-zE-2iO"/>
+                                    <constraint firstAttribute="height" constant="177" id="F42-pA-hOf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WomenConnect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9b6-Io-hoi">
-                                <rect key="frame" x="45" y="259" width="285" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.38823529411764707" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="U4R-8n-DXs" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="P79-ZV-Ndb"/>
-                            <constraint firstItem="9b6-Io-hoi" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="bXJ-bh-3ne"/>
-                            <constraint firstItem="9b6-Io-hoi" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-50.5" id="rtN-ik-FHR"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="U4R-8n-DXs" secondAttribute="bottom" constant="8" symbolic="YES" id="upZ-KN-Kg8"/>
+                            <constraint firstItem="umG-SE-kbd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="UcK-EG-C53"/>
+                            <constraint firstItem="umG-SE-kbd" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-28" id="juX-5H-BVq"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -53,4 +42,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Pink App Logo" width="1024" height="1024"/>
+    </resources>
 </document>

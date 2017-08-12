@@ -127,7 +127,9 @@ class EditPostVC: UIViewController, SearchViewControllerDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toLocation" {
-            let searchVC = segue.destination as! SearchViewController
+            
+            let searchNV = segue.destination as! UINavigationController
+            let searchVC = searchNV.topViewController as! SearchViewController
             searchVC.delegate = self
         } else {
             //do smth else

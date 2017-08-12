@@ -184,20 +184,23 @@ extension ChatViewController {
             if last != "NOTHING" {
                 ApiClient.apiCall(last!) { (post) in
 
-                print(post?.title ?? "NOTHING RECOGNIZED")
+                    print(post?.title ?? "NOTHING RECOGNIZED")
                     
-                    PostService.create(title: (post?.title)!, eventDate: (post?.eventDate)!, address: post?.location["address"] as! String, city: post?.location["city"] as! String, latitude: post?.location["latitude"] as! Double, longitude: post?.location["longitude"] as! Double, description: (post?.description)!, completion: { (succeeded) in
-                        
-                        if succeeded! {
-                            print("chat post in database's timeline")
+                    if post != nil {
+                        PostService.create(title: (post?.title)!, eventDate: (post?.eventDate)!, address: post?.location["address"] as! String, city: post?.location["city"] as! String, latitude: post?.location["latitude"] as! Double, longitude: post?.location["longitude"] as! Double, description: (post?.description)!, completion: { (succeeded) in
                             
-                        }
-                        else {
-                            print("chat post NOT in database's timeline")
-                            
-                        }
-                    })
+                            if succeeded! {
+                                print("chat post in database's timeline")
+                                
+                            }
+                            else {
+                                print("chat post NOT in database's timeline")
+                                
+                            }
+                        })
+                    }
                 }
+                
             }
             
             

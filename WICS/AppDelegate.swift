@@ -23,6 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         configureInitialRootViewController(for: window)
         
+        UINavigationBar.appearance().barTintColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1)
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         return true
     }

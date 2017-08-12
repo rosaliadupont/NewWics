@@ -57,8 +57,19 @@ extension GraphAPIVC {
                 print("\(#function): My lati: \(latitude)")
                 
                 let trimmed = description.replacingOccurrences(of: "^\\s*", with: "", options: .regularExpression)
+                let timeFormatter = DateFormatter()
                 
-                let post = Post(title: title, eventDate: eventDate, address: address, city: city, latitude: latitude, longitude: longitude, description: trimmed)!
+                
+                let fixedEventDate = eventDate.replacingOccurrences(of: "-0700", with: "")
+                print("\(#function) DATE: \(fixedEventDate)")
+                timeFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+                let date = timeFormatter.date(from: fixedEventDate)
+                
+                timeFormatter.dateStyle = .short
+                timeFormatter.timeStyle = .short
+                let newEventDate = timeFormatter.string(from: date!)
+                
+                let post = Post(title: title, eventDate: newEventDate, address: address, city: city, latitude: latitude, longitude: longitude, description: trimmed)!
                 completion(post)
                 
                 

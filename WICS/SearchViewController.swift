@@ -29,8 +29,8 @@ class SearchViewController: UIViewController {
         
         searchCompleter.delegate = self
         
-        UIApplication.shared.statusBarStyle = .lightContent
-        view.backgroundColor = .black
+        //UIApplication.shared.statusBarStyle = .lightContent
+        //view.backgroundColor = .black
         
     }
     @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {

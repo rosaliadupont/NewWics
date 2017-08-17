@@ -21,4 +21,10 @@ target 'WICS' do
   pod 'Kingfisher'
   pod 'LoremIpsum', '~> 1.0'
   pod 'SwiftyJSON'
+  pod 'OneSignal', '>= 2.5.2', '< 3.0'
+end
+
+target 'OneSignalNotificationServiceExtension' do
+  use_frameworks!
+  pod 'OneSignal', '>= 2.5.2', '< 3.0'
 end

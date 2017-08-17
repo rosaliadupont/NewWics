@@ -74,7 +74,7 @@
                   moduleName = "WICS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rosalia/GitHub/NewWics/WICS/APIClient.swift"
-                  timestampString = "524182174.209963"
+                  timestampString = "524690542.534368"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "48"
@@ -89,7 +89,7 @@
                   moduleName = "WICS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rosalia/GitHub/NewWics/WICS/APIClient.swift"
-                  timestampString = "524182174.211629"
+                  timestampString = "524690542.535834"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "48"
@@ -238,7 +238,7 @@
                   moduleName = "WICS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rosalia/GitHub/NewWics/WICS/LoginViewController.swift"
-                  timestampString = "524182174.25543"
+                  timestampString = "524690542.55196"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "52"
@@ -253,7 +253,7 @@
                   moduleName = "WICS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rosalia/GitHub/NewWics/WICS/LoginViewController.swift"
-                  timestampString = "524182174.256793"
+                  timestampString = "524690542.554038"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "53"
@@ -318,7 +318,7 @@
                   moduleName = "WICS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rosalia/GitHub/NewWics/WICS/LoginViewController.swift"
-                  timestampString = "524182174.265697"
+                  timestampString = "524690542.565393"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "69"
@@ -333,7 +333,7 @@
                   moduleName = "WICS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rosalia/GitHub/NewWics/WICS/LoginViewController.swift"
-                  timestampString = "524182174.267267"
+                  timestampString = "524690542.566923"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "70"
@@ -366,7 +366,7 @@
                   moduleName = "WICS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rosalia/GitHub/NewWics/WICS/LoginViewController.swift"
-                  timestampString = "524182174.284309"
+                  timestampString = "524690542.570405"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "69"
@@ -381,7 +381,7 @@
                   moduleName = "WICS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rosalia/GitHub/NewWics/WICS/LoginViewController.swift"
-                  timestampString = "524182174.285788"
+                  timestampString = "524690542.572338"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "70"
@@ -414,7 +414,7 @@
                   moduleName = "WICS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rosalia/GitHub/NewWics/WICS/LoginViewController.swift"
-                  timestampString = "524182174.306605"
+                  timestampString = "524690542.57739"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "69"
@@ -429,7 +429,7 @@
                   moduleName = "WICS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rosalia/GitHub/NewWics/WICS/LoginViewController.swift"
-                  timestampString = "524182174.308319"
+                  timestampString = "524690542.578744"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "70"
@@ -590,11 +590,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChatViewController.swift"
-            timestampString = "524179806.727415"
+            timestampString = "524546691.261996"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
             landmarkName = "didPressSend(_:withMessageText:senderId:senderDisplayName:date:)"
             landmarkType = "7">
             <Locations>
@@ -606,11 +606,11 @@
                   moduleName = "WICS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rosalia/GitHub/NewWics/ChatViewController.swift"
-                  timestampString = "524182174.362979"
+                  timestampString = "524690542.599054"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "247"
-                  endingLineNumber = "247"
+                  startingLineNumber = "256"
+                  endingLineNumber = "256"
                   offsetFromSymbolStart = "136">
                </Location>
                <Location
@@ -621,11 +621,11 @@
                   moduleName = "WICS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rosalia/GitHub/NewWics/ChatViewController.swift"
-                  timestampString = "524182174.364765"
+                  timestampString = "524690542.600406"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "249"
-                  endingLineNumber = "249"
+                  startingLineNumber = "258"
+                  endingLineNumber = "258"
                   offsetFromSymbolStart = "17">
                </Location>
             </Locations>
@@ -638,11 +638,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChatViewController.swift"
-            timestampString = "524179806.727415"
+            timestampString = "524546691.261996"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
             landmarkName = "didPressSend(_:withMessageText:senderId:senderDisplayName:date:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -654,11 +654,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChatViewController.swift"
-            timestampString = "524014402.424121"
+            timestampString = "524546691.261996"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "sendMessage(_:)"
             landmarkType = "7">
             <Locations>
@@ -670,11 +670,11 @@
                   moduleName = "WICS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rosalia/GitHub/NewWics/ChatViewController.swift"
-                  timestampString = "524182174.374009"
+                  timestampString = "524690542.60821"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "139"
-                  endingLineNumber = "139"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
                   offsetFromSymbolStart = "426">
                </Location>
                <Location
@@ -685,11 +685,11 @@
                   moduleName = "WICS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rosalia/GitHub/NewWics/ChatViewController.swift"
-                  timestampString = "524182174.375648"
+                  timestampString = "524690542.609995"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "139"
-                  endingLineNumber = "139"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
                   offsetFromSymbolStart = "12">
                </Location>
             </Locations>
@@ -708,6 +708,54 @@
             startingLineNumber = "64"
             endingLineNumber = "64"
             landmarkName = "readEvent(path:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatViewController.swift"
+            timestampString = "524546691.261996"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "didPressSend(_:withMessageText:senderId:senderDisplayName:date:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatViewController.swift"
+            timestampString = "524546691.261996"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "didPressSend(_:withMessageText:senderId:senderDisplayName:date:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatViewController.swift"
+            timestampString = "524546672.919787"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

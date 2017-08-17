@@ -9,6 +9,7 @@
 import UIKit
 import JSQMessagesViewController
 import FirebaseDatabase
+import OneSignal
 
 class ChatViewController: JSQMessagesViewController {
 
@@ -28,6 +29,11 @@ class ChatViewController: JSQMessagesViewController {
         
         setupJSQMessagesViewController()
         tryObservingMessages()
+        
+        let status: OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
+        
+          
+        
     }
     
     deinit {
@@ -162,6 +168,9 @@ extension ChatViewController {
         
         // 4
         JSQSystemSoundPlayer.jsq_playMessageSentAlert()
+        
+        let status: OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
+        let _ = status.subscriptionStatus.userId
         
         if message.content.range(of: "eventbrite.com/e") != nil {
             

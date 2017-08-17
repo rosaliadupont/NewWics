@@ -79,6 +79,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-OneSignalNotificationServiceExtension.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-WICS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -138,6 +143,11 @@
 			<true/>
 		</dict>
 		<key>7335E9C9689F3B8A16F063A884748533</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>745A2536ABC9981AD547B885DBBC3C73</key>
 		<dict>
 			<key>primary</key>
 			<true/>

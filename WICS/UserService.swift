@@ -12,6 +12,7 @@ import FirebaseAuth.FIRUser
 import FirebaseDatabase
 import CoreLocation
 import MapKit
+import OneSignal
 
 //this struct contains all of the user-related networking
 //code here
@@ -31,6 +32,7 @@ struct UserService {
     }
     
     static func create(_ firUser: FIRUser, username: String, completion: @escaping (User?) -> Void) {
+        
         
         let userAttrs = ["username": username]
         
